@@ -28,16 +28,15 @@ body{
     pointer-events: none;       
     z-index: -1;                
   }
-  
+
   .starfield::before {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
-    width: 1px;
-    height: 1px;
+    width: 1.25px;
+    height: 1.25px;
     background: transparent;
-  
     box-shadow:
       50px 100px white,
       120px 80px white,
@@ -59,14 +58,33 @@ body{
       1350px 100px white,
       1205px 100px white,
       1450px 70px white,
-      1100px 150px white;
-      
-    animation: sparkle 2s infinite ease-in-out;
+      1100px 150px white,
+      50px 300px white,
+      150px 350px white,
+      250px 50px white,
+      350px 250px white,
+      450px 150px white,
+      550px 80px white,
+      650px 320px white,
+      750px 200px white,
+      850px 140px white,
+      950px 400px white,
+      1050px 80px white,
+      1150px 250px white,
+      1250px 180px white,
+      1350px 360px white,
+      1450px 220px white,
+      1550px 100px white,
+      1650px 280px white,
+      1750px 160px white,
+      1850px 300px white;
+    animation: sparkle 3s infinite ease-in-out;
   }
+  
   
   @keyframes sparkle {
     0%, 100% { opacity: 1.8; }
-    50% { opacity: 0.45; }
+    50% { opacity: 0.35; }
   }
   
   .welcome-title {
