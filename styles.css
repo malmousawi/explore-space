@@ -1,9 +1,17 @@
+body{
+    background: #000;
+    overflow: hidden; 
+    position: relative; 
+    margin: 0;
+    padding: 0;
+}
+
+
 /* Ensure the body fills the viewport and is ready for centered content */
-body {
+.welcome-title{
     margin: 0;
     padding: 0;
     overflow: hidden;           /* Prevents scrollbars from the animated background */
-    background: #000;           /* Dark background for space */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -82,7 +90,7 @@ body {
     clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%);
     
     /* Animate the clip-path to reveal the full text in a stepped (typing) motion */
-    animation: revealCenter 2s steps(40, end) forwards;
+    animation: revealCenter 5s steps(40, end) forwards;
   }
   
   /* Blinking caret added via a pseudo-element */
@@ -117,4 +125,73 @@ body {
       opacity: 1;
     }
   }
-  
+
+
+
+  .container > * {
+    background-color: rgb(96 139 168 / 0.2);
+    margin: 150px;
+    border-radius: 10px;
+    position: relative;
+
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+  }
+
+
+/* @property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.container > * ::after, .container > * ::before{
+    --angle: 0deg;
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: conic-gradient(from var(--angle), transparent 70%, blue);
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 5px;
+    border-radius: 10px;
+    animation: 3s spin linear infinite;
+  }
+
+  .container > * ::before{
+    filter: blur(1.5rem);
+    opacity: 0.5;
+  }
+
+  @keyframes spin{
+    from{
+        --angle: 0deg;
+    }
+    to{
+        --angle: 360deg;
+    }
+  } */
+
+.marsButton,
+.solarButton {
+  background-color: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  font-family: 'Orbitron', sans-serif;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.marsButton:hover,
+.solarButton:hover {
+  border-color: #007BFF;      
+  box-shadow: 0 0 15px 5px rgba(0, 123, 255, 0.6);
+}
+
