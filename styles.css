@@ -76,7 +76,7 @@ body{
   /* Animation for the twinkling effect on the stars */
   @keyframes sparkle {
     0%, 100% { opacity: 1.8; }
-    50% { opacity: 0.6; }
+    50% { opacity: 0.45; }
   }
   
   /* Typewriter effect for the heading */
@@ -97,7 +97,7 @@ body{
   .welcome-title::after {
     content: "";
     position: absolute;
-    /* background: #fff; */
+    /* background: #fff;  */
     width: 2px;
     height: 1em;
     left: 50%;
@@ -121,7 +121,7 @@ body{
     from, to {
       opacity: 0;
     }
-    50% {
+    100% {
       opacity: 1;
     }
   }
