@@ -7,34 +7,28 @@ body{
 }
 
 
-/* Ensure the body fills the viewport and is ready for centered content */
 .welcome-title{
     margin: 0;
     padding: 0;
-    overflow: hidden;           /* Prevents scrollbars from the animated background */
+    overflow: hidden;           
     display: flex;
     justify-content: center;
     align-items: center;
     height: 40vh;
-    position: relative;         /* So that the background layer can be absolutely positioned */
+    position: relative;         
   }
   
-  /* Starfield background container */
   .starfield {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    /* 
-      Adjust height if you only want the star effect in the top portion.
-      For a full-screen effect, leave it at 100%.
-    */
+  
     height: 100%;
-    pointer-events: none;       /* Allow clicks to pass through */
-    z-index: -1;                /* Place behind your content */
+    pointer-events: none;       
+    z-index: -1;                
   }
   
-  /* Create stars using a pseudo-element and box-shadow */
   .starfield::before {
     content: "";
     position: absolute;
@@ -43,10 +37,7 @@ body{
     width: 1px;
     height: 1px;
     background: transparent;
-    /* 
-      Each coordinate here represents a star (a white dot). 
-      Add or modify coordinates to create a denser or more randomized starfield.
-    */
+  
     box-shadow:
       50px 100px white,
       120px 80px white,
@@ -73,27 +64,22 @@ body{
     animation: sparkle 2s infinite ease-in-out;
   }
   
-  /* Animation for the twinkling effect on the stars */
   @keyframes sparkle {
     0%, 100% { opacity: 1.8; }
     50% { opacity: 0.45; }
   }
   
-  /* Typewriter effect for the heading */
   .welcome-title {
     font-family: 'Orbitron', sans-serif;
-    font-size: 2rem;           /* Adjust as desired */
+    font-size: 2rem;           
     color: #fff;
     position: relative;
     
-    /* Start with only the center of the text visible */
     clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%);
     
-    /* Animate the clip-path to reveal the full text in a stepped (typing) motion */
     animation: revealCenter 5s steps(40, end) forwards;
   }
   
-  /* Blinking caret added via a pseudo-element */
   .welcome-title::after {
     content: "";
     position: absolute;
@@ -106,7 +92,6 @@ body{
     animation: blink-caret 0.75s step-end infinite;
   }
   
-  /* Keyframes for the text reveal animation (expanding clip-path from center) */
   @keyframes revealCenter {
     from {
       clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%);
@@ -116,7 +101,6 @@ body{
     }
   }
   
-  /* Keyframes for the blinking caret */
   @keyframes blink-caret {
     from, to {
       opacity: 0;
