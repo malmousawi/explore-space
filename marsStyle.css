@@ -11,55 +11,25 @@
     z-index: -1;                
   }
 
-  .starfield::before {
-    content: "";
+  .starfield {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  
+    height: 100%;
+    pointer-events: none;       
+    z-index: -1;                
+  }
+
+  .starfield {
     position: absolute;
     top: 0;
     left: 0;
     width: 1.25px;
     height: 1.25px;
     background: transparent;
-    box-shadow:
-      50px 100px white,
-      120px 80px white,
-      200px 150px white,
-      300px 50px white,
-      400px 200px white,
-      500px 300px white,
-      600px 120px white,
-      700px 250px white,
-      800px 60px white,
-      900px 350px white,
-      950px 100px white,
-      1200px 250px white,
-      1550px 200px white,
-      1650px 100px white,
-      1750px 80px white,
-      1000px 300px white,
-      1300px 300px white,
-      1350px 100px white,
-      1205px 100px white,
-      1450px 70px white,
-      1100px 150px white,
-      50px 300px white,
-      150px 350px white,
-      250px 50px white,
-      350px 250px white,
-      450px 150px white,
-      550px 80px white,
-      650px 320px white,
-      750px 200px white,
-      850px 140px white,
-      950px 400px white,
-      1050px 80px white,
-      1150px 250px white,
-      1250px 180px white,
-      1350px 360px white,
-      1450px 220px white,
-      1550px 100px white,
-      1650px 280px white,
-      1750px 160px white,
-      1850px 300px white;
+    box-shadow: none;
     animation: sparkle 3s infinite ease-in-out;
   }
   
@@ -143,3 +113,67 @@ h1 {
         width: 100%;
     }
 }
+
+
+.image-viewer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+#main-image {
+    width: 650px; /* Adjust as needed */
+    height: 450px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(255, 69, 0, 0.8);
+}
+
+
+.nav-button {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 50%;
+}
+
+.nav-button.left {
+    left: 5%;
+}
+
+.nav-button.right {
+    right: 5%;
+}
+
+.nav-button:hover {
+    background: rgba(255, 69, 0, 0.8);
+}
+
+.thumbnail-flexbox {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.thumbnail {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.thumbnail:hover {
+    transform: scale(1.2);
+    box-shadow: 0px 0px 15px rgba(255, 69, 0, 0.8);
+}
+

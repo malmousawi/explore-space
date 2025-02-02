@@ -3,6 +3,8 @@ const apiKey = "5RaMN183unU0pwhNH5C2La0vNrsdNWFl3eYcqB9d";
 const rover = "Perseverance";
 const url = `https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/latest_photos?api_key=${apiKey}`;
 
+let images = [];  
+let currentIndex = 0;
 
 async function fetchMarsPhotos() {
     try {
@@ -14,23 +16,49 @@ async function fetchMarsPhotos() {
             return;
         }
 
-        const latestPhotos = data.latest_photos.slice(0, 15); 
-        displayPhotos(latestPhotos);
+        images = data.latest_photos.slice(0, 15).map(photo => photo.img_src);
+        
+        if (images.length > 0) {
+            displayPhotos();
+        }
     } catch (error) {
         console.error("Error fetching Mars photos:", error);
     }
 }
 
-function displayPhotos(photos) {
-    const container = document.getElementById("photo-container");
-    container.innerHTML = ""; 
+function displayPhotos() {
+    const mainImage = document.getElementById("main-image");
+    const thumbnailContainer = document.getElementById("thumbnail-container");
 
-    photos.forEach(photo => {
+    if (!mainImage || !thumbnailContainer) return;
+
+    mainImage.src = images[currentIndex];
+
+    thumbnailContainer.innerHTML = "";
+
+    for (let i = -2; i <= 2; i++) {
+        let index = (currentIndex + i + images.length) % images.length; 
         const img = document.createElement("img");
-        img.src = photo.img_src;
-        img.alt = `Mars Rover Image - ${photo.earth_date}`;
-        container.appendChild(img);
-    });
+        img.src = images[index];
+        img.classList.add("thumbnail");
+        img.onclick = () => changeImage(index);
+        thumbnailContainer.appendChild(img);
+    }
+}
+
+function changeImage(index) {
+    currentIndex = index;
+    displayPhotos();
+}
+
+function prevImage() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length; 
+    displayPhotos();
+}
+
+function nextImage() {
+    currentIndex = (currentIndex + 1) % images.length; 
+    displayPhotos();
 }
 
 

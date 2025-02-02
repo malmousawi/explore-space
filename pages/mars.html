@@ -8,19 +8,24 @@
 </head>
 
 <body>
+    <div class="starfield"></div>
     <button class="homePageButton" onclick="homePage()">Return Home</button>
-
+    
     <header>
         <h1>Latest Mars Rover Photos</h1>
     </header>
-    <div class="starfield"></div>
+    
     
     <main>
-        <div id="photo-container" class="photo-flexbox">
-
+        <div class="image-viewer">
+            <button class="nav-button left" onclick="prevImage()">&#10094;</button>
+            <img id="main-image" src="" alt="Mars Image">
+            <button class="nav-button right" onclick="nextImage()">&#10095;</button>
         </div>
+        
+        <div id="thumbnail-container" class="thumbnail-flexbox"></div>
     </main>
-
+    
     <script src="../index.js"></script>
 </body>
 </html>
