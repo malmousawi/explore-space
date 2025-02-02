@@ -1,14 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Mars Images</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <button onclick="homePage()">Back to main page</button>
+    <title>Mars Rover Latest Photos</title>
+    <link rel="stylesheet" href="../marsStyle.css">
+</head>
+
+<body>
+    <button class="homePageButton" onclick="homePage()">Return Home</button>
+
+    <header>
+        <h1>Latest Mars Rover Photos</h1>
+        <p>Fetching images from NASA</p>
+    </header>
+    <div class="starfield"></div>
+    
+    <main>
+        <div id="photo-container" class="photo-flexbox">
+
+        </div>
+    </main>
+
     <script src="../index.js"></script>
-  </body>
+</body>
 </html>
