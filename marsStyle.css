@@ -71,7 +71,8 @@
 
 .homePageButton{
     float: left;
-    margin: 20px;
+    margin-left: 20px;
+    margin-top: 20px;
     width: 100px;
     height: 30px;
     background-color: transparent;
