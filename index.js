@@ -85,6 +85,35 @@ document.addEventListener("wheel", (event) => {
     showSlide(currentSlide);
 });
 
+
+document.addEventListener("DOMContentLoaded", () => {
+    const rocket = document.getElementById("rocket");
+
+    rocket.addEventListener("mouseenter", () => {
+        // Add the animation class
+        rocket.classList.add("fly-away");
+
+        // Reset the rocket after it flies off (optional)
+        setTimeout(() => {
+            rocket.classList.remove("fly-away");
+        }, 1300); // Reset after 3 seconds
+    });
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const rocket = document.getElementById("rocket");
+    const smoke = document.querySelector(".smoke-trail");
+
+    if (!rocket || !smoke) {
+        console.error("Rocket or Smoke element not found!");
+        return;
+    }
+
+});
+
+
+
 generateStarfield();
 fetchMarsPhotos();
 showSlide(currentSlide);

@@ -20,7 +20,6 @@ body{
     top: 0;
     left: 0;
     width: 100%;
-  
     height: 100%;
     pointer-events: none;       
     z-index: -1;                
@@ -48,6 +47,7 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    z-index: 10;
 }
 
 .slideshow {
@@ -60,6 +60,7 @@ body{
   flex-direction: column;
   align-items: center;
   text-align: center;
+  z-index: 10;
 }
 
 .slide {
@@ -70,6 +71,7 @@ body{
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
   transition: opacity 0.5s ease-in-out;
+  z-index: 10;
 }
 
 .slide.active {
@@ -194,6 +196,28 @@ body{
 .solarButton:hover{
     border-color: #FFCC33;      
     box-shadow: 0 0 15px 5px #FFCC33;
+}
+
+
+.rocket-container {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  width: 140px;
+  height: 80px;
+  overflow: visible;
+}
+
+.rocket {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  transition: transform 2s ease-in-out, opacity 1.5s ease-in-out;
+}
+
+.fly-away {
+  transform: translateY(-600px) translateX(280px) rotate(30deg) scale(2.2);
+  opacity: 0;
 }
 
 
