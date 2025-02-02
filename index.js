@@ -140,6 +140,43 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    let currentSlide = 0;
+    const slides = document.querySelectorAll(".slide");
+    
+    function showSlide(index) {
+        slides.forEach(slide => slide.classList.remove("active"));
+        
+        // Wrap around to the first/last slide if needed
+        if (index < 0) {
+            currentSlide = slides.length - 1;
+        } else if (index >= slides.length) {
+            currentSlide = 0;
+        } else {
+            currentSlide = index;
+        }
+
+        slides[currentSlide].classList.add("active");
+    }
+
+    // Next & Prev buttons
+    window.changeSlide = function (step) {
+        showSlide(currentSlide + step);
+    };
+
+    // Keyboard Navigation (Left Arrow & Right Arrow)
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "ArrowRight") {
+            changeSlide(1);
+        } else if (event.key === "ArrowLeft") {
+            changeSlide(-1);
+        }
+    });
+
+    // Show the first slide on load
+    showSlide(currentSlide);
+});
+
 
 
 generateStarfield();
