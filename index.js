@@ -147,7 +147,6 @@ document.addEventListener("DOMContentLoaded", function () {
     function showSlide(index) {
         slides.forEach(slide => slide.classList.remove("active"));
         
-        // Wrap around to the first/last slide if needed
         if (index < 0) {
             currentSlide = slides.length - 1;
         } else if (index >= slides.length) {
@@ -159,12 +158,10 @@ document.addEventListener("DOMContentLoaded", function () {
         slides[currentSlide].classList.add("active");
     }
 
-    // Next & Prev buttons
     window.changeSlide = function (step) {
         showSlide(currentSlide + step);
     };
 
-    // Keyboard Navigation (Left Arrow & Right Arrow)
     document.addEventListener("keydown", function (event) {
         if (event.key === "ArrowRight") {
             changeSlide(1);
@@ -173,7 +170,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Show the first slide on load
     showSlide(currentSlide);
 });
 
