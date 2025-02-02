@@ -1,6 +1,6 @@
 
 const apiKey = "5RaMN183unU0pwhNH5C2La0vNrsdNWFl3eYcqB9d";
-const rover = "curiosity";
+const rover = "Perseverance";
 const url = `https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/latest_photos?api_key=${apiKey}`;
 
 
@@ -14,7 +14,7 @@ async function fetchMarsPhotos() {
             return;
         }
 
-        const latestPhotos = data.latest_photos.slice(0, 14); 
+        const latestPhotos = data.latest_photos.slice(0, 15); 
         displayPhotos(latestPhotos);
     } catch (error) {
         console.error("Error fetching Mars photos:", error);
