@@ -14,18 +14,38 @@
     <!-- Starry background layer -->
     <div class="starfield"></div>
     
-    <h1 class="welcome-title">Welcome fellow space enthusiats!</h1>
+    <h1 class="welcome-title">Welcome, Fellow Space Explorers!</h1>
 
-    <div class="container">
-
-      <div class="mars">
-        <button onclick="toMarsPage()" class="marsButton" style="width: 150px; height: 40px;">View Mars Images</button>
-      </div>
-
-      <div class="solar">
-        <button  class="solarButton" style="width: 150px; height: 40px;">View Solar System</button>
-      </div>
-
+    <div class="slideshow">
+        <!-- Slide 1: Introduction to the Universe -->
+        <section class="slide active" id="slide1">
+            <h2>The Universe: A Boundless Frontier</h2>
+            <p>Space is an infinite expanse filled with galaxies, nebulae, and celestial wonders waiting to be explored. Scientists estimate there are over 2 trillion galaxies, each with billions of stars and planets. Join us on a journey beyond Earth and into the cosmos.</p>
+        </section>
+    
+        <!-- Slide 2: Mars Exploration -->
+        <section class="slide" id="slide2">
+            <h2>Mars: The Red Planet</h2>
+            <p>Mars has captivated humanity for centuries. With its vast deserts, towering volcanoes, and mysterious ice caps, it remains a prime candidate for future colonization. NASA's Perseverance Rover continues to explore its terrain, searching for signs of ancient life.</p>
+            <ul>
+                <li><strong>Olympus Mons:</strong> The largest volcano in the solar system.</li>
+                <li><strong>Valles Marineris:</strong> A canyon stretching over 4,000 km long.</li>
+                <li><strong>Frozen Water:</strong> Potential resources for future human missions.</li>
+            </ul>
+            <button onclick="toMarsPage()" class="marsButton" style="width: 200px; height: 50px;">Explore Mars Now</button>
+        </section>
+    
+        <!-- Slide 3: The Solar System -->
+        <section class="slide" id="slide3">
+            <h2>Our Solar System: A Cosmic Neighborhood</h2>
+            <p>From the scorching surface of Mercury to the icy rings of Saturn, our solar system is full of incredible diversity. Each planet has its own unique features, and some moons—like Europa and Titan—might even harbor alien life!</p>
+            <div class="planet-facts">
+                <p><strong>Jupiter:</strong> The largest planet, with a storm that’s raged for centuries.</p>
+                <p><strong>Saturn’s Rings:</strong> A dazzling spectacle made of ice and rock.</p>
+                <p><strong>Pluto:</strong> Once a planet, now a fascinating dwarf world.</p>
+            </div>
+            <button class="solarButton" style="width: 200px; height: 50px;">Journey Through the Solar System</button>
+        </section>
     </div>
 
 
